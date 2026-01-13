@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp7qyicwl7cod"]
+
+[ext_resource type="Script" uid="uid://d2ygchpjjgtrf" path="res://combat/deck_sys.gd" id="1_57u1h"]
+
+[node name="DeckSys" type="Node2D"]
+script = ExtResource("1_57u1h")

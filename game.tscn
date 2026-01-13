@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://elst0xn32iil"]
+
+[ext_resource type="Script" uid="uid://bxdrpvgafbjro" path="res://game.gd" id="1_80nbo"]
+
+[node name="game" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_80nbo")
+
+[node name="start_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -51.0
+offset_top = -16.0
+offset_right = 41.0
+offset_bottom = 15.0
+text = "game start"
+
+[connection signal="pressed" from="start_button" to="." method="_on_button_pressed"]

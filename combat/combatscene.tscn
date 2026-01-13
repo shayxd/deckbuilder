@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwlb282scyc8j"]
+
+[ext_resource type="PackedScene" uid="uid://bm6c2fmm67srl" path="res://enemies/enemy.tscn" id="1_jpogc"]
+[ext_resource type="Script" uid="uid://v7g2ccsg2in2" path="res://combat/player.gd" id="1_pm5kc"]
+[ext_resource type="Script" uid="uid://bic7q0ct57lh1" path="res://combat/deckcounter.gd" id="3_67ied"]
+[ext_resource type="Script" uid="uid://44t8lg8c4vps" path="res://combat/discardcounter.gd" id="4_itwlk"]
+[ext_resource type="Script" uid="uid://bbrhua6m68en4" path="res://combat/playerhand.gd" id="5_ojjxh"]
+
+[node name="combatscene" type="Node2D"]
+
+[node name="enemy" parent="." instance=ExtResource("1_jpogc")]
+
+[node name="player" type="Node" parent="."]
+script = ExtResource("1_pm5kc")
+
+[node name="hp" type="ProgressBar" parent="player"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.003
+anchor_right = 0.003
+offset_left = -197.92
+offset_top = 199.0
+offset_right = 214.08
+offset_bottom = 227.0
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = -43.0
+offset_right = 195.0
+offset_bottom = -3.0
+
+[node name="deckcounter" type="Label" parent="UI"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("3_67ied")
+
+[node name="discardcounter" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("4_itwlk")
+
+[node name="deck" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -57.0
+offset_top = 586.0
+offset_right = -17.0
+offset_bottom = 616.0
+grow_horizontal = 0
+text = "deck"
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/deck"]
+
+[node name="discard" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 1003.0
+offset_top = 586.0
+offset_right = 1059.0
+offset_bottom = 623.0
+text = "discard"
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/discard"]
+
+[node name="playerhand" type="Node2D" parent="."]
+script = ExtResource("5_ojjxh")

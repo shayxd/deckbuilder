@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://d3wbow8tg17sw"]
+
+[ext_resource type="Script" uid="uid://dbm7itt5rusl2" path="res://cards/carddata.gd" id="1_ws1hp"]
+
+[resource]
+script = ExtResource("1_ws1hp")
+id = "3"
+name = "draw1"
+description = "draw1"
+element = "air"
+metadata/_custom_type_script = "uid://dbm7itt5rusl2"

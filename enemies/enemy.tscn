@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm6c2fmm67srl"]
+
+[ext_resource type="Script" uid="uid://d0gofk2kcfd41" path="res://enemies/enemy.gd" id="1_fw1ev"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_orwns"]
+[ext_resource type="Script" uid="uid://dnqfruew416t" path="res://enemies/enemyhp.gd" id="3_a6vjd"]
+
+[node name="enemy" type="Node2D"]
+script = ExtResource("1_fw1ev")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, 47)
+texture = ExtResource("2_orwns")
+
+[node name="enemyhp" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -198.0
+offset_top = -65.0
+offset_right = 189.0
+offset_bottom = -38.0
+script = ExtResource("3_a6vjd")
+
+[connection signal="enemy_lost_hp" from="." to="enemyhp" method="_on_enemy_enemy_lost_hp"]
