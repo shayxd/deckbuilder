@@ -1,5 +1,5 @@
 extends Node2D
-var draw_pile = [Brick,Brick,Brick,Brick,Brick,Brick,draw1,draw1,draw1,draw1,]
+var draw_pile = ["Brick",'Brick','Brick','Brick','Brick','Brick','draw1','draw1','draw1','draw1']
 var discard_pile = []
 var exhaust_pile = []
 var hand = []
@@ -21,4 +21,4 @@ func reshuffle():
 	draw_pile.shuffle()
 
 func trigger_empty_deck_damage():
-	enemy.take_damage(5)
+	%enemy.take_damage(5)

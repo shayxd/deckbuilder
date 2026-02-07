@@ -1,23 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwlb282scyc8j"]
+[gd_scene load_steps=8 format=3 uid="uid://bwlb282scyc8j"]
 
 [ext_resource type="PackedScene" uid="uid://bm6c2fmm67srl" path="res://enemies/enemy.tscn" id="1_jpogc"]
 [ext_resource type="Script" uid="uid://v7g2ccsg2in2" path="res://combat/player.gd" id="1_pm5kc"]
 [ext_resource type="Script" uid="uid://ci35th58xb3nl" path="res://combat/enemyhpbar.gd" id="2_67ied"]
 [ext_resource type="Script" uid="uid://bic7q0ct57lh1" path="res://combat/deckcounter.gd" id="3_67ied"]
-[ext_resource type="Script" uid="uid://0mn476i1qqvm" path="res://cardview.gd" id="4_67ied"]
 [ext_resource type="Script" uid="uid://44t8lg8c4vps" path="res://combat/discardcounter.gd" id="4_itwlk"]
 [ext_resource type="Script" uid="uid://c76w2a5wsyf78" path="res://combat/ui.gd" id="4_ojjxh"]
 [ext_resource type="Script" uid="uid://dd8jcevoh2dwk" path="res://combat/hand_ui.gd" id="5_7ujxg"]
-[ext_resource type="Texture2D" uid="uid://dvf7ytu4ukyum" path="res://assets/cardback.webp" id="7_7ujxg"]
-
-[sub_resource type="PackedScene" id="PackedScene_ojjxh"]
 
 [node name="combatscene" type="Node2D"]
 scale = Vector2(1.3882118, 1.1333939)
 
 [node name="enemy" parent="." instance=ExtResource("1_jpogc")]
 unique_name_in_owner = true
-position = Vector2(275.17413, 111.17053)
+position = Vector2(280.93695, 149.99199)
 
 [node name="enemyhpbar" type="ProgressBar" parent="enemy"]
 offset_right = 4.0
@@ -40,7 +36,6 @@ offset_right = 827.48
 offset_bottom = 616.0
 
 [node name="UI" type="Control" parent="."]
-unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -48,41 +43,26 @@ offset_bottom = 40.0
 script = ExtResource("4_ojjxh")
 
 [node name="hand_ui" type="HBoxContainer" parent="UI"]
-unique_name_in_owner = true
 layout_mode = 0
-offset_left = 67.71301
-offset_top = 396.1553
-offset_right = 517.9325
-offset_bottom = 515.2666
+offset_left = 155.0
+offset_top = -43.0
+offset_right = 195.0
+offset_bottom = -3.0
 script = ExtResource("5_7ujxg")
-card_view = SubResource("PackedScene_ojjxh")
 
-[node name="card_view" type="HBoxContainer" parent="UI"]
-custom_minimum_size = Vector2(70, 70)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 296.74072
-offset_top = 545.61926
-offset_right = 568.7407
-offset_bottom = 938.61926
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(1, -1.047)
-script = ExtResource("4_67ied")
+[node name="deckcounter" type="Label" parent="UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("3_67ied")
 
-[node name="Art" type="TextureRect" parent="UI/card_view"]
-layout_mode = 2
-texture = ExtResource("7_7ujxg")
-
-[node name="Description" type="Label" parent="UI/card_view"]
-layout_mode = 2
-
-[node name="Name" type="Label" parent="UI/card_view"]
-layout_mode = 2
+[node name="discardcounter" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("4_itwlk")
 
 [node name="deck" type="Button" parent="UI"]
 layout_mode = 1
@@ -98,15 +78,6 @@ text = "deck"
 
 [node name="Sprite2D" type="Sprite2D" parent="UI/deck"]
 
-[node name="deckcounter" type="Label" parent="UI/deck/Sprite2D"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(10, 10)
-offset_left = -2.1610527
-offset_top = -413.80142
-offset_right = 37.838947
-offset_bottom = -390.80142
-script = ExtResource("3_67ied")
-
 [node name="discard" type="Button" parent="UI"]
 layout_mode = 0
 offset_left = 532.3395
@@ -116,11 +87,3 @@ offset_bottom = 447.2722
 text = "discard"
 
 [node name="Sprite2D" type="Sprite2D" parent="UI/discard"]
-
-[node name="discardcounter" type="Label" parent="UI/discard/Sprite2D"]
-unique_name_in_owner = true
-offset_left = -532.3395
-offset_top = -410.2722
-offset_right = -492.33948
-offset_bottom = -387.2722
-script = ExtResource("4_itwlk")

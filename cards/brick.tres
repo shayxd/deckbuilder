@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://yuy7i415jopc"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://yuy7i415jopc"]
 
-[ext_resource type="Script" uid="uid://dbm7itt5rusl2" path="res://cards/carddata.gd" id="1_h2a5l"]
+[ext_resource type="Texture2D" uid="uid://cg55h8de7tlwc" path="res://assets/brick.png" id="1_al8qf"]
+[ext_resource type="Script" uid="uid://dbm7itt5rusl2" path="res://combat/carddata.gd" id="1_h2a5l"]
 
 [resource]
 script = ExtResource("1_h2a5l")
@@ -8,4 +9,5 @@ id = "2"
 name = "Brick"
 description = "..."
 element = "earth"
+art = ExtResource("1_al8qf")
 metadata/_custom_type_script = "uid://dbm7itt5rusl2"

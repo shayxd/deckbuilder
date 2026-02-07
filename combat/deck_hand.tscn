@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://84smff7d7cx0"]
 
 [node name="deck_hand" type="Node2D"]
+position = Vector2(46, 34)
+scale = Vector2(-164459120, 48283836)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

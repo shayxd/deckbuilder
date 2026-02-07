@@ -13,14 +13,24 @@ config_version=5
 config/name="draw_deckbuilder"
 config/description="draw heavy deckbuilder
 "
+run/main_scene="uid://elst0xn32iil"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameState="*res://game_state.gd"
+Cardsdb="*res://cardsdatabase.gd"
+
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=840
+window/size/viewport_height=620
 window/stretch/mode="viewport"
+
+[editor]
+
+version_control/autoload_on_startup=true
 
 [rendering]
 

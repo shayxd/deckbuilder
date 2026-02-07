@@ -2,7 +2,6 @@ extends Node2D
 const hand_count=5
 
 #called first 
-func _ready() -> void:
-	var card_scene=preload("res://cards/card.tscn")
-	for i in range hand_count:
-		var new_card=card_scene.instantiate()
+#	var card_scene=preload("res://cards/card.tscn")
+#	for i in range hand_count:
+#		var new_card=card_scene.instantiate()

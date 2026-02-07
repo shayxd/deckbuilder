@@ -1,12 +1,8 @@
 extends Label
 
-var _target_object
-var _target_property
+@onready var darw_pile_size=%player
+@onready var decklabel=%deckcounter
 
 # Use this method to set text
-func bind_text(target_object, target_property):
-	_target_object = target_object
-	_target_property = target_property
-
-func _process(_delta: float) -> void:
-	text = str(_target_object.get(_target_property))
+func _ready():
+	text=str(%player.draw_pile_size)

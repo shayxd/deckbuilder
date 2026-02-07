@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqge5kq0wxwk0"]
+
+[ext_resource type="Script" uid="uid://0mn476i1qqvm" path="res://cardview.gd" id="1_obqk0"]
+
+[node name="Card" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_obqk0")
+
+[node name="name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 5.0
+offset_right = 457.0
+offset_bottom = 28.0
+
+[node name="description" type="Label" parent="."]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 208.0
+offset_right = 464.0
+offset_bottom = 350.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 245.0
+offset_top = -1.0
+offset_right = 470.0
+offset_bottom = 356.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 245.0
+offset_right = 471.0
+offset_bottom = 198.0
